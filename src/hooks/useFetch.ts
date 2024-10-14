@@ -13,7 +13,7 @@ export const useFetch = <T>(url: string): ReturnType<T> => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(url)
+    fetch(`${url}?_limit=10`)
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => setError(err.message))
